@@ -6,8 +6,12 @@ import { GetLeadsResponse } from "@/lib/types";
 import Link from "next/link";
 
 export default function LeadsDashboard() {
-  const { loading, error, data, refetch } =
-    useQuery<GetLeadsResponse>(GET_LEADS);
+  const { loading, error, data, refetch } = useQuery<GetLeadsResponse>(
+    GET_LEADS,
+    {
+      pollInterval: 3000, // Poll every 3 seconds
+    }
+  );
 
   if (loading) {
     return (

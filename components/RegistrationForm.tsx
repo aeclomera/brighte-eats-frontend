@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useMutation } from "@apollo/client/react";
-import { REGISTER_LEAD } from "@/lib/graphql/operations";
+import { REGISTER_LEAD, GET_LEADS } from "@/lib/graphql/operations";
 import {
   ServiceType,
   RegisterLeadInput,
@@ -19,7 +19,9 @@ export default function RegistrationForm() {
   });
 
   const [registerLead, { loading, error, data }] =
-    useMutation<RegisterLeadResponse>(REGISTER_LEAD);
+    useMutation<RegisterLeadResponse>(REGISTER_LEAD, {
+      refetchQueries: [{ query: GET_LEADS }],
+    });
 
   const handleServiceToggle = (service: ServiceType) => {
     setFormData((prev) => ({
