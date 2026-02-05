@@ -3,10 +3,14 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client/react";
 import { REGISTER_LEAD } from "@/lib/graphql/operations";
-import { ServiceType, RegisterInput, RegisterLeadResponse } from "@/lib/types";
+import {
+  ServiceType,
+  RegisterLeadInput,
+  RegisterLeadResponse,
+} from "@/lib/types";
 
 export default function RegistrationForm() {
-  const [formData, setFormData] = useState<RegisterInput>({
+  const [formData, setFormData] = useState<RegisterLeadInput>({
     name: "",
     email: "",
     mobile: "",

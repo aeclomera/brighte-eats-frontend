@@ -1,8 +1,8 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 // Mutation to register a new lead
 export const REGISTER_LEAD = gql`
-  mutation RegisterLead($input: RegisterInput!) {
+  mutation RegisterLead($input: RegisterLeadInput!) {
     register(input: $input) {
       id
       name
@@ -44,4 +44,3 @@ export const GET_LEAD = gql`
     }
   }
 `;
-

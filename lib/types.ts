@@ -1,8 +1,8 @@
 // Service types matching the backend enum
 export enum ServiceType {
-  DELIVERY = 'DELIVERY',
-  PICKUP = 'PICKUP',
-  PAYMENT = 'PAYMENT',
+  DELIVERY = "DELIVERY",
+  PICKUP = "PICKUP",
+  PAYMENT = "PAYMENT",
 }
 
 // Lead type matching the backend GraphQL schema
@@ -17,7 +17,7 @@ export interface Lead {
 }
 
 // Input type for registering a new lead
-export interface RegisterInput {
+export interface RegisterLeadInput {
   name: string;
   email: string;
   mobile: string;
@@ -38,4 +38,3 @@ export interface GetLeadsResponse {
 export interface GetLeadResponse {
   lead: Lead;
 }
-
